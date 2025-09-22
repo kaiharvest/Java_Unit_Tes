@@ -4,8 +4,8 @@ import org.junit.jupiter.api.*;
 import org.opentest4j.TestAbortedException;
 import programmer.zaman.now.test.generator.SimpleTestNameGenerator;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assumptions.*;
 
 @DisplayNameGeneration(SimpleTestNameGenerator.class)
 // @DisplayName("Test untuk Calculator class)")
@@ -70,6 +70,13 @@ public class CalculatorTest {
         if (!"DEV".equals(profile)) {
             throw new TestAbortedException("Test di Batalkan karena bukan DEV");
         }
+    }
+
+    @Test
+    public void testAssumption() {
+        assumeTrue("DEV".equals(System.getenv("PROFILE")));
+
+        // dev unit test
     }
 
 }
