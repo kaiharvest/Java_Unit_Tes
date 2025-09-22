@@ -1,6 +1,6 @@
 package programmer.zaman.now.test;
 
-import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayNameGeneration;
 import org.junit.jupiter.api.Test;
 import programmer.zaman.now.test.generator.SimpleTestNameGenerator;
@@ -37,6 +37,12 @@ public class CalculatorTest {
         assertThrows(IllegalArgumentException.class, () -> {
             calculator.devide(10, 0);
         });
+    }
+
+    @Test
+    @Disabled
+    public void testComingSoon() {
+        // Masih dalam perbaikan
     }
 
 }
