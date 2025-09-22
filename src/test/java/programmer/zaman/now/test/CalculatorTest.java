@@ -1,6 +1,7 @@
 package programmer.zaman.now.test;
 
 import org.junit.jupiter.api.*;
+import org.opentest4j.TestAbortedException;
 import programmer.zaman.now.test.generator.SimpleTestNameGenerator;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -61,6 +62,14 @@ public class CalculatorTest {
     @Disabled
     public void testComingSoon() {
         // Masih dalam perbaikan
+    }
+
+    @Test
+    public void testAbort() {
+        var profile = System.getenv("PROFILE");
+        if (!"DEV".equals(profile)) {
+            throw new TestAbortedException("Test di Batalkan karena bukan DEV");
+        }
     }
 
 }
