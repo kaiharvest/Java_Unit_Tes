@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.1" name="programmer.zaman.now.test.CalculatorTest" time="0.036" tests="6" errors="0" skipped="3" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.1" name="programmer.zaman.now.test.ConditionalTest" time="0.013" tests="10" errors="0" skipped="5" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -55,48 +55,24 @@
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="testAssumption" classname="programmer.zaman.now.test.CalculatorTest" time="0.0">
-    <skipped type="org.opentest4j.TestAbortedException"><![CDATA[org.opentest4j.TestAbortedException: Assumption failed: assumption is not true
-	at org.junit.jupiter.api.Assumptions.throwAssumptionFailed(Assumptions.java:316)
-	at org.junit.jupiter.api.Assumptions.assumeTrue(Assumptions.java:115)
-	at org.junit.jupiter.api.Assumptions.assumeTrue(Assumptions.java:66)
-	at programmer.zaman.now.test.CalculatorTest.testAssumption(CalculatorTest.java:77)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-]]></skipped>
-    <system-out><![CDATA[Before all
-Before each
-After each
-]]></system-out>
+  <testcase name="testEnabledRunJre" classname="programmer.zaman.now.test.ConditionalTest" time="0.0">
+    <skipped message="Disabled on JRE version: 17.0.15"/>
   </testcase>
-  <testcase name="testAbort" classname="programmer.zaman.now.test.CalculatorTest" time="0.0">
-    <skipped type="org.opentest4j.TestAbortedException"><![CDATA[org.opentest4j.TestAbortedException: Test di Batalkan karena bukan DEV
-	at programmer.zaman.now.test.CalculatorTest.testAbort(CalculatorTest.java:71)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-]]></skipped>
-    <system-out><![CDATA[Before each
-After each
-]]></system-out>
+  <testcase name="testDisabledOnJavaVendor" classname="programmer.zaman.now.test.ConditionalTest" time="0.0">
+    <skipped message="System property [java.vendor] with value [Oracle Corporation] matches regular expression [Oracle Corporation]"/>
   </testcase>
-  <testcase name="testAddSucces" classname="programmer.zaman.now.test.CalculatorTest" time="0.002">
-    <system-out><![CDATA[Before each
-After each
-]]></system-out>
+  <testcase name="testEnabledJava11To17" classname="programmer.zaman.now.test.ConditionalTest" time="0.001"/>
+  <testcase name="testEnabledOnProfileDev" classname="programmer.zaman.now.test.ConditionalTest" time="0.0">
+    <skipped message="Environment variable [PROFILE] does not exist"/>
   </testcase>
-  <testcase name="testComingSoon" classname="programmer.zaman.now.test.CalculatorTest" time="0.0">
-    <skipped message="public void programmer.zaman.now.test.CalculatorTest.testComingSoon() is @Disabled"/>
+  <testcase name="testEnabledOnJavaVendor" classname="programmer.zaman.now.test.ConditionalTest" time="0.001"/>
+  <testcase name="testDisabledJre" classname="programmer.zaman.now.test.ConditionalTest" time="0.001"/>
+  <testcase name="testDisabledJava11To17" classname="programmer.zaman.now.test.ConditionalTest" time="0.0">
+    <skipped message="Disabled on JRE version: 17.0.15"/>
   </testcase>
-  <testcase name="testDevideFailed" classname="programmer.zaman.now.test.CalculatorTest" time="0.001">
-    <system-out><![CDATA[Before each
-After each
-]]></system-out>
+  <testcase name="testDisabledOnlyWindows" classname="programmer.zaman.now.test.ConditionalTest" time="0.0"/>
+  <testcase name="testEnabledOnlyWindows" classname="programmer.zaman.now.test.ConditionalTest" time="0.0">
+    <skipped message="Disabled on operating system: Mac OS X"/>
   </testcase>
-  <testcase name="testDevideSucces" classname="programmer.zaman.now.test.CalculatorTest" time="0.001">
-    <system-out><![CDATA[Before each
-After each
-]]></system-out>
-  </testcase>
+  <testcase name="testDisabledOnProfileDev" classname="programmer.zaman.now.test.ConditionalTest" time="0.002"/>
 </testsuite>

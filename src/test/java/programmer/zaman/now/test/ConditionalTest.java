@@ -7,37 +7,69 @@ public class ConditionalTest {
 
     @Test
     @EnabledOnOs({OS.WINDOWS})
-    public void testRunOnlyWindows() {
+    void testEnabledOnlyWindows() {
 
     }
 
     @Test
     @DisabledOnOs({OS.WINDOWS})
-    public void testDisabledOnlyWindows() {
+    void testDisabledOnlyWindows() {
 
     }
 
     @Test
     @EnabledOnJre({JRE.JAVA_8})
-    public void testRunJre() {
+    void testEnabledRunJre() {
 
     }
 
     @Test
     @DisabledOnJre({JRE.JAVA_11})
-    public void testDisabledJre()  {
+    void testDisabledJre()  {
 
     }
 
     @Test
     @EnabledForJreRange(min = JRE.JAVA_11, max = JRE.JAVA_17)
-    public void testEnabledJava11To17() {
+    void testEnabledJava11To17() {
 
     }
 
     @Test
     @DisabledForJreRange(min = JRE.JAVA_11, max = JRE.JAVA_17)
-    public void testDisabledJava11To17() {
+    void testDisabledJava11To17() {
+
+    }
+
+    @Test
+    @EnabledIfSystemProperties(
+            @EnabledIfSystemProperty(named = "java.vendor", matches = "Oracle Corporation")
+    )
+    void testEnabledOnJavaVendor() {
+
+    }
+
+    @Test
+    @DisabledIfSystemProperties(
+            @DisabledIfSystemProperty(named = "java.vendor", matches = "Oracle Corporation")
+    )
+    void testDisabledOnJavaVendor() {
+
+    }
+
+    @Test
+    @EnabledIfEnvironmentVariables(
+            @EnabledIfEnvironmentVariable(named = "PROFILE", matches = "DEV")
+    )
+    void testEnabledOnProfileDev() {
+
+    }
+
+    @Test
+    @DisabledIfEnvironmentVariables(
+            @DisabledIfEnvironmentVariable(named = "PROFILE", matches = "DEV")
+    )
+    void testDisabledOnProfileDev() {
 
     }
 
